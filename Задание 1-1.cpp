@@ -11,8 +11,11 @@ void getResult(double x, double y, double z);
 int main()
 {
     const double x = 1.825;
+    cout << "x= " << x << endl;
     const double y = 18.225;
+    cout << "y= " << y << endl;
     const double z = -3.298;
+    cout << "z= " << z << endl;
     getResult(x, y, z);
     return 1;
 }
