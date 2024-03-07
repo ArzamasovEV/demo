@@ -29,6 +29,7 @@ int main()
     cout << "Area of a cube face = " << a * a << endl;
     cout << "Surface area of a cube = " << cubeSurface(a) << endl;
     cout << "Volume of a cube = " << cubeVolume(a) << endl;
+    return 0;
 }
 double getValue()
 {
