@@ -7,6 +7,11 @@ using namespace std;
 */
 double getValue();
 /**
+* @breef Проверяет число на то, чтобы оно не было равно нулю или меньше нуля
+* @return Введённое значение
+*/
+void checkValue(double value);
+/**
 * @breef Считает площадь поверхности куба
 * @param a - длина ребра куба
 * @return Площадь поверхности куба
@@ -20,12 +25,13 @@ double cubeSurface(double a);
 double cubeVolume(double a);
 /**
 * @breef - главная функция программы
-* @return - возвращает 0, если функция выполнена верно, иначе 1.
+* @return - возвращает 0, если функция выполнена верно, иначе 1
 */
 int main()
 {
     cout << "Enter the cube edge length = " << endl;
     double a = getValue();
+    checkValue(a);
     cout << "Area of a cube face = " << a * a << endl;
     cout << "Surface area of a cube = " << cubeSurface(a) << endl;
     cout << "Volume of a cube = " << cubeVolume(a) << endl;
@@ -34,12 +40,19 @@ double getValue()
 {
     double value;
     cin >> value;
-    if (cin.fail() or (value<=0))
+    if (cin.fail())
     {
         cout << "incorrect value" << endl;
         abort();
     }
     return value;
+}
+void checkValue(double value)
+{
+    if (value <= 0)
+    {
+        abort();
+    }
 }
 double cubeSurface(double a)
 {
