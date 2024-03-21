@@ -16,20 +16,30 @@ double getValue();
 */
 bool checkConditions(double x, double y, double z, double r, double s);
 /**
+* @breef Проверяет число на то, чтобы оно не было равно нулю или меньше нуля
+* @return Введённое значение
+*/
+void checkValue(double value);
+/**
 * @breef - главная функция программы
 * @return - возвращает 0, если функция выполнена верно, иначе 1.
 */
 int main() {
     cout << "Enter the length of the brick = ";
     double x = getValue();
+    checkValue(x);
     cout << "Enter the width of the brick = ";
     double y = getValue();
+    checkValue(y);
     cout << "Enter the height of the brick = ";
     double z = getValue();
+    checkValue(z);
     cout << "Enter hole length = ";
     double r = getValue();
+    checkValue(r);
     cout << "Enter hole width = ";
     double s = getValue();
+    checkValue(s);
 
     bool fit = checkConditions(x, y, z, r, s);
 
@@ -58,4 +68,11 @@ double getValue() {
         abort();
     }
     return value;
+}
+void checkValue(double value)
+{
+    if (value <= 0)
+    {
+        abort();
+    }
 }
