@@ -44,13 +44,9 @@ int main() {
 }
 
 bool checkConditions(double x, double y, double z, double r, double s) {
-    if ((x <= r && y <= s) || (x <= s && y <= r) ||
+    return ((x <= r && y <= s) || (x <= s && y <= r) ||
         (x <= r && z <= s) || (x <= s && z <= r) ||
         (y <= r && z <= s) || (y <= s && z <= r)) {
-        return true;
-    }
-    else {
-        return false;
     }
 }
 
