@@ -41,9 +41,7 @@ int main() {
     double s = getValue();
     checkValue(s);
 
-    bool fit = checkConditions(x, y, z, r, s);
-
-    if (fit) {
+    if (checkConditions(x, y, z, r, s)) {
         cout << "The brick goes through the hole." << endl;
     }
     else {
@@ -56,14 +54,14 @@ int main() {
 bool checkConditions(double x, double y, double z, double r, double s) {
     return ((x <= r && y <= s) || (x <= s && y <= r) ||
         (x <= r && z <= s) || (x <= s && z <= r) ||
-        (y <= r && z <= s) || (y <= s && z <= r)) {
+        (y <= r && z <= s) || (y <= s && z <= r)); {
     }
 }
 
 double getValue() {
     double value;
     cin >> value;
-    if (cin.fail() || value <= 0) {
+    if (cin.fail())  {
         cout << "incorrect value" << endl;
         abort();
     }
